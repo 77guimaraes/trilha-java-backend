@@ -17,6 +17,14 @@ public class aulaFundamentos {
                 Muito bom!
                 Ano de lançamento: """ + anoDeLancamento;
         System.out.println(sinopse);
+
+        double media = (9.8 + 6.3 + 8.0) / 3;
+
+        //casting explícito
+        int classificacao = (int) (media /2);;
+        System.out.println(classificacao);
+
+
     }
 }
 
