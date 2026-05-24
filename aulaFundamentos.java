@@ -7,5 +7,7 @@ public class aulaFundamentos {
         int anoDeLancamento = 2022;
         System.out.println("Ano de lançamento: " + anoDeLancamento);
         boolean incluidoNoPlano = true;
+        double notaDoFilme = 8.1;
+
     }
 }
