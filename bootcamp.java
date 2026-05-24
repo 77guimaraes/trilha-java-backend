@@ -3,7 +3,7 @@ import java.lang.*;
 public class bootcamp{
     public static void main(String[] args){
 
-        System.out.println("=== ATENDIMENTO DA CAFETERIA ===\n");
+        System.out.println("=== ATENDIMENTO DA LANCHONETE ===\n");
         System.out.println
                 ("Segue abaixo nosso cardápio:" +
                         "1 - CAFÉ PRETO (R$ 3,00)" +
