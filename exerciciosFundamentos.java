@@ -1,5 +1,3 @@
-import java.sql.SQLOutput;
-
 public class exerciciosFundamentos {
     public static void main (String[] args){
 
@@ -29,5 +27,24 @@ public class exerciciosFundamentos {
         double total = precoProduto * quantidade;
         System.out.println(String.format("O total a ser pago é R$ %.2f reais", total));
 
+        //5. Declare uma variável do tipo double valorEmDolares. Atribua um valor em dólares a essa variável. Considere que o valor de 1 dólar é equivalente a 4.94 reais. Realize a conversão do valor em dólares para reais e imprima o resultado formatado.
+
+        //valor em reais = valor em dol * taxa do cambio
+
+        double valorEmDolares = 10.5;
+        double txCambio = 5.01;
+        double valorEmReal = valorEmDolares * txCambio;
+        System.out.println(String.format("O valor de U$ %.2f convertido para reais é dé R$ %.2f", valorEmDolares, valorEmReal));
+
+        //6. Declare uma variável do tipo double precoOriginal. Atribua um valor em reais a essa variável, representando o preço original de um produto. Em seguida, declare uma variável do tipo double percentualDesconto e atribua um valor percentual de desconto ao produto (por exemplo, 10 para 10%). Calcule o valor do desconto em reais, aplique-o ao preço original e imprima o novo preço com desconto.
+        double precoOriginal = 150.00;
+        double percentualDesconto = 15.0;
+
+        double valorDesconto = precoOriginal * (percentualDesconto / 100);
+
+        double precoFinal = precoOriginal - percentualDesconto;
+        System.out.println(String.format("Preço original: R$ %.2f", precoOriginal));
+        System.out.println(String.format("Desconto aplicado: R$ %.2f (%.0f%%)%n", valorDesconto, percentualDesconto));
+        System.out.println(String.format("Preço com desconto aplicado R$ %.2f", precoFinal));
     }
 }
