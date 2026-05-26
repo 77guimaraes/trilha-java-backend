@@ -7,6 +7,8 @@ public class aulaCondicionais {
 
         if (anoDeLancamento > 2022){
             System.out.println("Lançamento que os clientes estão curtindo");
+        } else {
+            System.out.println("Filme retrô que vale a pena assistir");
         }
     }
 }
