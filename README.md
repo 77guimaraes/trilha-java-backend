@@ -2,6 +2,13 @@
 
 Bem-vindo ao meu repositório central de estudos em Java! 🚀
 
+<div align="center">
+  <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java"/>
+  <img src="https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white" alt="IntelliJ IDEA"/>
+  <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Git"/>
+  <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+</div>
+
 Este espaço foi criado para documentar a minha evolução técnica no desenvolvimento Back-end, organizando todos os projetos, desafios e anotações dos cursos que estou realizando.
 
 ## 🛠️ Tecnologias e Ferramentas
