@@ -42,9 +42,17 @@ public class desafioBancario {
                         System.out.println("Saldo insuficiente.");
                     } else {
                         saldo -= valor;
-                        System.out.println("Transferencia realizada com sucesso.");
+                        System.out.println(String.format("Transferencia realizada com sucesso. Seu saldo atual é: R$ %.2f", saldo));
                 }
             }
+            //Opção 3 - Receber valor
+            else if (opcao == 3) {
+                System.out.println("Informe o valor a receber: ");
+                double valor = leitura.nextDouble();
+                saldo += valor;
+                System.out.println(String.format("Valor recebido! Seu saldo atual é: R$ %.2f", saldo));
+            }
+
         }
     }
 }
