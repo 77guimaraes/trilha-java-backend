@@ -7,6 +7,19 @@ public class desafioBancario {
         String tipoConta = "Corrente";
         double saldo = 1599.99;
 
+        String menu = """
+                \nDigite o numero da opção que deseja:
+                
+                1 - Consultar Saldo Atual;
+                2 - Transferir Valor;
+                3 - Receber Valor;
+                4 - Sair.""";
 
+        int opcao = 0;
+        Scanner leitura = new Scanner(System.in);
+
+        while (opcao != 4){
+
+        }
     }
 }
