@@ -1,3 +1,5 @@
+package fundamentos;
+
 public class exerciciosFundamentos {
     public static void main (String[] args){
 
@@ -46,5 +48,6 @@ public class exerciciosFundamentos {
         System.out.println(String.format("Preço original: R$ %.2f", precoOriginal));
         System.out.println(String.format("Desconto aplicado: R$ %.2f (%.0f%%)%n", valorDesconto, percentualDesconto));
         System.out.println(String.format("Preço com desconto aplicado R$ %.2f", precoFinal));
+
     }
 }

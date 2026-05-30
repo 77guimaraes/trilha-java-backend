@@ -1,3 +1,5 @@
+package fundamentos;
+
 import java.util.Scanner;
 
 public class aulaLoop {
@@ -18,9 +20,6 @@ public class aulaLoop {
             mediaAvaliacao += nota; //recebe o que ja tinha + a nota
         }
 
-        System.out.println("Media de avaliações" + mediaAvaliacao/3);
-
-
-
+        System.out.println("Media de avaliações: " + mediaAvaliacao/3);
     }
 }

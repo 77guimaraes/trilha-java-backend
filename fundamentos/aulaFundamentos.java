@@ -1,3 +1,5 @@
+package fundamentos;
+
 public class aulaFundamentos {
     public static void main (String [] args){
         System.out.println("Esse é o Screen Match!");
