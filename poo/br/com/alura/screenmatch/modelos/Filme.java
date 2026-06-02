@@ -2,16 +2,21 @@ package poo.br.com.alura.screenmatch.modelos;
 
 //Classe "FILME" criado
 public class Filme {
-    public String nome = "Top Gun";
-    int anoLancamento = 2022;
-    boolean incluidoNoPlano = true;
+    private String nome = "Top Gun";
+    private int anoLancamento = 2022;
+    private boolean incluidoNoPlano = true;
     private double somaDasAvaliacoes;
     private int totalAvaliacoes;
-    int duracaoEmMinutos;
+    private int duracaoEmMinutos;
 
     //Metodo acessor
     public int getTotalAvaliacoes() {
         return totalAvaliacoes;
+    }
+
+    //PERMITE QUE UM USUÁRIO INCLUA UM NOME
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     //Metodo é a maneira de algo. Nesse caso, é a maneira de exibir ficha tecnica
