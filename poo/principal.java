@@ -1,4 +1,5 @@
 package poo;
+import poo.br.com.alura.screenmatch.modelos.Filme;
 
 public class principal {
     public static void main(String[] args) {
