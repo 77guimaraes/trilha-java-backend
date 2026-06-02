@@ -16,7 +16,19 @@ public class Filme {
 
     //PERMITE QUE UM USUÁRIO INCLUA UM NOME
     public void setNome(String nome) {
-        this.nome = nome;
+        this.nome = nome; //
+    }
+
+    public void setAnoLancamento(int anoLancamento) {
+        this.anoLancamento = anoLancamento;
+    }
+
+    public void setIncluidoNoPlano(boolean incluidoNoPlano) {
+        this.incluidoNoPlano = incluidoNoPlano;
+    }
+
+    public void setDuracaoEmMinutos(int duracaoEmMinutos) {
+        this.duracaoEmMinutos = duracaoEmMinutos;
     }
 
     //Metodo é a maneira de algo. Nesse caso, é a maneira de exibir ficha tecnica
