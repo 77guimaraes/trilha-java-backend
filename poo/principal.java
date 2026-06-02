@@ -9,9 +9,9 @@ public class principal {
 
         //Tipo Referência - Objeto Filme (new Filme / new Objeto)
         Filme meuFilme = new Filme();
-        meuFilme.nome = "Norbit"; //definindo atributos no meu novo filme
-        meuFilme.anoLancamento = 2005;
-        meuFilme.duracaoEmMinutos = 1500;
+        meuFilme.setNome ("Norbit"); //definindo atributos no meu novo filme
+        meuFilme.setAnoLancamento(2005);
+        meuFilme.setDuracaoEmMinutos(180);
 
         meuFilme.exibeFichaTecnica();
         meuFilme.avalia(8);
