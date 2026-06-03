@@ -1,5 +1,6 @@
 package poo;
 import poo.br.com.alura.screenmatch.modelos.Filme;
+import poo.br.com.alura.screenmatch.modelos.Serie;
 
 public class principal {
     public static void main(String[] args) {
@@ -23,5 +24,11 @@ public class principal {
         //meuFilme.totalAvaliacoes = 1;
         //System.out.println(meuFilme.pegaMedia());
 
+
+        Serie supernatural = new Serie();
+        supernatural.setNome ("Supernatural");
+        supernatural.setAnoLancamento(2005);
+        supernatural.setDuracaoEmMinutos(180);
+        supernatural.exibeFichaTecnica();
     }
 }
