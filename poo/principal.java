@@ -13,6 +13,7 @@ public class principal {
         meuFilme.setNome ("Norbit"); //definindo atributos no meu novo filme
         meuFilme.setAnoLancamento(2005);
         meuFilme.setDuracaoEmMinutos(180);
+        System.out.println("Duração do filme: " + meuFilme.getDuracaoEmMinutos());
 
         meuFilme.exibeFichaTecnica();
         meuFilme.avalia(8);
@@ -32,5 +33,7 @@ public class principal {
         supernatural.exibeFichaTecnica();
         supernatural.setTemporadas(8);
         supernatural.setEpisodiosPorTemporada(15);
+        supernatural.setMinutosPorEpisodio(50);
+        System.out.println("Duração para maratonar Supernatural: " + supernatural.getDuracaoEmMinutos());
     }
 }
