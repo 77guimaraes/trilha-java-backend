@@ -30,5 +30,7 @@ public class principal {
         supernatural.setAnoLancamento(2005);
         supernatural.setDuracaoEmMinutos(180);
         supernatural.exibeFichaTecnica();
+        supernatural.setTemporadas(8);
+        supernatural.setEpisodiosPorTemporada(15);
     }
 }
