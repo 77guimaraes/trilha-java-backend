@@ -1,7 +1,7 @@
 package poo.br.com.alura.screenmatch.modelos;
 
 //Classe "FILME" criado
-public class Filme {
+public class Filme extends Titulo{
     private String diretor;
 
     public String getDiretor() {
