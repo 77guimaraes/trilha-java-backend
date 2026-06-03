@@ -8,6 +8,9 @@ public class Titulo {
     private int totalAvaliacoes;
     private int duracaoEmMinutos;
 
+    public int getDuracaoEmMinutos() {
+        return duracaoEmMinutos;
+    }
 
     //Metodo acessor
     public int getTotalAvaliacoes() {

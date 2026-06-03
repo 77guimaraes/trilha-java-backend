@@ -38,7 +38,7 @@ public class Serie extends Titulo{
         this.minutosPorEpisodio = minutosPorEpisodio;
     }
 
-    @Override
+    @Override //indica que um metodo está sobrescrevendo o mesmo método definido na sua classe mãe
     public int getDuracaoEmMinutos() {
         return temporadas * episodiosPorTemporada * minutosPorEpisodio;
     }
