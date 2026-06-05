@@ -1,4 +1,5 @@
 package poo.br.com.alura.screenmatch.calculos;
 
-public class Classificavel {
+public interface Classificavel {
+    int getClassificacao();
 }
