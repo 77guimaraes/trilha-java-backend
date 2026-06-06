@@ -2,8 +2,8 @@ package poo;
 import poo.br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import poo.br.com.alura.screenmatch.calculos.FiltroRecomendacao;
 import poo.br.com.alura.screenmatch.modelos.Episodio;
-import poo.br.com.alura.screenmatch.modelos.Filme;
 import poo.br.com.alura.screenmatch.modelos.Serie;
+import poo.br.com.alura.screenmatch.modelos.Filme;
 
 import java.util.ArrayList;
 
@@ -71,10 +71,10 @@ public class principal {
         listaDeFilmes.add(outroFilme);
         listaDeFilmes.add(meuFilme);
 
-        System.out.println("Tamanho da lista: " + listaDeFilmes.size());
-        System.out.println("Primeiro filme: " + listaDeFilmes.get(0));
-        System.out.println("Segundo filme: " + listaDeFilmes.get(1));
-        System.out.println("Terceiro filme: " + listaDeFilmes.get(2));
+        System.out.println("\nTamanho da lista: " + listaDeFilmes.size());
+        System.out.println("Primeiro filme: " + listaDeFilmes.get(0).getNome());
+        System.out.println("Segundo filme: " + listaDeFilmes.get(1).getNome());
+        System.out.println("Terceiro filme: " + listaDeFilmes.get(2).getNome());
 
     }
 }
