@@ -1,7 +1,11 @@
 package poo;
 import poo.br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
+import poo.br.com.alura.screenmatch.calculos.FiltroRecomendacao;
+import poo.br.com.alura.screenmatch.modelos.Episodio;
 import poo.br.com.alura.screenmatch.modelos.Filme;
 import poo.br.com.alura.screenmatch.modelos.Serie;
+
+import java.util.ArrayList;
 
 public class principal {
     public static void main(String[] args) {
@@ -48,6 +52,29 @@ public class principal {
         calculadora.inclui(supernatural);
         System.out.println(calculadora.getTempoTotal());
 
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(supernatural);
+        episodio.setTotalVisualizacoes(300);
+        filtro.filtra(episodio);
+
+        Filme filmeDoPaulo = new Filme();
+        filmeDoPaulo.setNome ("Dogville");
+        filmeDoPaulo.setDuracaoEmMinutos(200);
+        filmeDoPaulo.avalia(10);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filmeDoPaulo);
+        listaDeFilmes.add(outroFilme);
+        listaDeFilmes.add(meuFilme);
+
+        System.out.println("Tamanho da lista: " + listaDeFilmes.size());
+        System.out.println("Primeiro filme: " + listaDeFilmes.get(0));
+        System.out.println("Segundo filme: " + listaDeFilmes.get(1));
+        System.out.println("Terceiro filme: " + listaDeFilmes.get(2));
 
     }
 }
