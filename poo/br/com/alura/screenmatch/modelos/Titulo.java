@@ -30,6 +30,10 @@ public class Titulo {
         this.anoLancamento = anoLancamento;
     }
 
+    public int getAnoLancamento() {
+        return anoLancamento;
+    }
+
     public void setIncluidoNoPlano(boolean incluidoNoPlano) {
         this.incluidoNoPlano = incluidoNoPlano;
     }
