@@ -70,11 +70,13 @@ public class principal {
         listaDeFilmes.add(filmeDoPaulo);
         listaDeFilmes.add(outroFilme);
         listaDeFilmes.add(meuFilme);
-
         System.out.println("\nTamanho da lista: " + listaDeFilmes.size());
         System.out.println("Primeiro filme: " + listaDeFilmes.get(0).getNome());
         System.out.println("Segundo filme: " + listaDeFilmes.get(1).getNome());
         System.out.println("Terceiro filme: " + listaDeFilmes.get(2).getNome());
+        System.out.println(listaDeFilmes);
+        System.out.println("toString do filme: " + listaDeFilmes.get(0).toString());
 
+        filmeDoPaulo.
     }
 }
