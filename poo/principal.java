@@ -14,7 +14,7 @@ public class principal {
          */
 
         //Tipo Referência - Objeto Filme (new Filme / new Objeto)
-        Filme meuFilme = new Filme("Norbit"); //definindo atributos no meu novo filme
+        Filme meuFilme = new Filme("Norbit", 2000); //definindo atributos no meu novo filme
         meuFilme.setAnoLancamento(2005);
         meuFilme.setDuracaoEmMinutos(180);
         System.out.println("Duração do filme: " + meuFilme.getDuracaoEmMinutos());
@@ -29,10 +29,7 @@ public class principal {
         //meuFilme.totalAvaliacoes = 1;
         //System.out.println(meuFilme.pegaMedia());
 
-
-        Serie supernatural = new Serie();
-        supernatural.setNome ("Supernatural");
-        supernatural.setAnoLancamento(2005);
+        Serie supernatural = new Serie("Supernatural", 2002);
         supernatural.setDuracaoEmMinutos(180);
         supernatural.exibeFichaTecnica();
         supernatural.setTemporadas(8);
@@ -40,7 +37,7 @@ public class principal {
         supernatural.setMinutosPorEpisodio(50);
         System.out.println("Duração para maratonar Supernatural: " + supernatural.getDuracaoEmMinutos());
 
-        Filme outroFilme = new Filme("Avatar");
+        Filme outroFilme = new Filme("Avatar", 2022);
         outroFilme.setAnoLancamento(2023);
         outroFilme.setDuracaoEmMinutos(200);
 
@@ -59,7 +56,7 @@ public class principal {
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
 
-        Filme filmeDoPaulo = new Filme("dogville");
+        Filme filmeDoPaulo = new Filme("dogville", 1970);
         filmeDoPaulo.setNome ("Dogville");
         filmeDoPaulo.setDuracaoEmMinutos(200);
         filmeDoPaulo.avalia(10);
