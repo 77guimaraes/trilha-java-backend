@@ -1,4 +1,4 @@
-package poo;
+package poo.br.com.alura.screenmatch.principal;
 import poo.br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import poo.br.com.alura.screenmatch.calculos.FiltroRecomendacao;
 import poo.br.com.alura.screenmatch.modelos.Episodio;
@@ -71,7 +71,6 @@ public class principal {
         System.out.println("Terceiro filme: " + listaDeFilmes.get(2).getNome());
         System.out.println(listaDeFilmes);
         System.out.println("toString do filme: " + listaDeFilmes.get(0).toString());
-
 
     }
 }
