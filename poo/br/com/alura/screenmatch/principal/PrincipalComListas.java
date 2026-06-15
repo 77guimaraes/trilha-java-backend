@@ -19,17 +19,23 @@ public class PrincipalComListas {
         filmeDoPaulo.avalia(10);
         Serie supernatural = new Serie("Supernatural", 2002);
 
+        Filme f1 = filmeDoPaulo;
+
 
         ArrayList<Titulo> lista = new ArrayList<>();
         lista.add(filmeDoPaulo);
         lista.add(outroFilme);
         lista.add(meuFilme);
         lista.add(supernatural);
+
         for (Titulo item: lista) {
             System.out.println(item.getNome());
 
-            Filme filme = (Filme) item;
-            System.out.println("Classificação: " + filme.getClassificacao()); //Para usar o getClassificação de Filme.java in
+            if (item instanceof Filme filme && filme.getClassificacao() > 2) {
+                System.out.println("Classificação: " + filme.getClassificacao()); //Para usar o getClassificação de Filme.java in
+            }
+
+
         }
     }
 }
