@@ -4,7 +4,9 @@ import poo.br.com.alura.screenmatch.modelos.Filme;
 import poo.br.com.alura.screenmatch.modelos.Serie;
 import poo.br.com.alura.screenmatch.modelos.Titulo;
 
+import javax.lang.model.type.ArrayType;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PrincipalComListas {
     private static ArrayList<Filme> listaDeFilmes;
@@ -36,6 +38,19 @@ public class PrincipalComListas {
             }
 
 
+            ArrayList<String> buscaPorArtista = new ArrayList<>();
+            buscaPorArtista.add("Adam Sandler");
+            buscaPorArtista.add("Paulo");
+            buscaPorArtista.add("Jaqueline");
+            System.out.println(buscaPorArtista);
+
+            //Ordenando listas
+            Collections.sort(buscaPorArtista);
+            System.out.println("Depois da ordenação");
+            System.out.println(buscaPorArtista);
+
+            //Collections só roda objetos que saibam sua ordem.
+            Collections.sort(lista);
         }
     }
 }
