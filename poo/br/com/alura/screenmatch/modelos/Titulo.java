@@ -1,6 +1,6 @@
 package poo.br.com.alura.screenmatch.modelos;
 
-public class Titulo {
+public class Titulo implements  Comparable<Titulo>{
     private String nome = "Top Gun";
     private int anoLancamento = 2022;
     private boolean incluidoNoPlano = true;
@@ -64,5 +64,12 @@ public class Titulo {
     public double pegaMedia() {
         return somaDasAvaliacoes / totalAvaliacoes;
         //Metodos com valores numericos devem possuir um "return"
+    }
+
+    //Ordenando todos os getNome
+    @Override
+    public int compareTo(Titulo outroTitulo) {
+        //"retorna o seguinte: pega este getNome e compare com o getNome de outroTitulo"
+        return this.getNome().compareTo(outroTitulo.getNome());
     }
 }
