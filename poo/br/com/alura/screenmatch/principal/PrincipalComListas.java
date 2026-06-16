@@ -30,76 +30,7 @@ public class PrincipalComListas {
         lista.add(meuFilme);
         lista.add(supernatural);
 
-        {
-            System.out.println(lista.get(0).getNome());
 
-            if (lista.get(0) instanceof Filme filme && filme.getClassificacao() > 2) {
-                System.out.println("Classificação: " + filme.getClassificacao()); //Para usar o getClassificação de Filme.java in
-            }
-
-
-            ArrayList<String> buscaPorArtista = new ArrayList<>();
-            buscaPorArtista.add("Adam Sandler");
-            buscaPorArtista.add("Paulo");
-            buscaPorArtista.add("Jaqueline");
-            System.out.println(buscaPorArtista);
-
-            //Ordenando listas
-            Collections.sort(buscaPorArtista);
-            System.out.println("\nDepois da ordenação");
-            System.out.println(buscaPorArtista);
-            System.out.println("\nLista de titulos ordenados: ");
-            //Collections só roda objetos que saibam sua ordem.
-            Collections.sort(lista);
-            System.out.println(lista);
-        }
-        {
-            System.out.println(lista.get(1).getNome());
-
-            if (lista.get(1) instanceof Filme filme && filme.getClassificacao() > 2) {
-                System.out.println("Classificação: " + filme.getClassificacao()); //Para usar o getClassificação de Filme.java in
-            }
-
-
-            ArrayList<String> buscaPorArtista = new ArrayList<>();
-            buscaPorArtista.add("Adam Sandler");
-            buscaPorArtista.add("Paulo");
-            buscaPorArtista.add("Jaqueline");
-            System.out.println(buscaPorArtista);
-
-            //Ordenando listas
-            Collections.sort(buscaPorArtista);
-            System.out.println("\nDepois da ordenação");
-            System.out.println(buscaPorArtista);
-            System.out.println("\nLista de titulos ordenados: ");
-            //Collections só roda objetos que saibam sua ordem.
-            Collections.sort(lista);
-            System.out.println(lista);
-        }
-        {
-            System.out.println(lista.get(2).getNome());
-
-            if (lista.get(2) instanceof Filme filme && filme.getClassificacao() > 2) {
-                System.out.println("Classificação: " + filme.getClassificacao()); //Para usar o getClassificação de Filme.java in
-            }
-
-
-            ArrayList<String> buscaPorArtista = new ArrayList<>();
-            buscaPorArtista.add("Adam Sandler");
-            buscaPorArtista.add("Paulo");
-            buscaPorArtista.add("Jaqueline");
-            System.out.println(buscaPorArtista);
-
-            //Ordenando listas
-            Collections.sort(buscaPorArtista);
-            System.out.println("\nDepois da ordenação");
-            System.out.println(buscaPorArtista);
-            System.out.println("\nLista de titulos ordenados: ");
-            //Collections só roda objetos que saibam sua ordem.
-            Collections.sort(lista);
-            System.out.println(lista);
-        }
-        {
             System.out.println(lista.get(3).getNome());
 
             if (lista.get(3) instanceof Filme filme && filme.getClassificacao() > 2) {
@@ -124,6 +55,5 @@ public class PrincipalComListas {
             Collections.sort(lista);
             System.out.println(lista);
 
-        }
     }
 }
