@@ -5,9 +5,7 @@ import poo.br.com.alura.screenmatch.modelos.Serie;
 import poo.br.com.alura.screenmatch.modelos.Titulo;
 
 import javax.lang.model.type.ArrayType;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class PrincipalComListas {
     private static ArrayList<Filme> listaDeFilmes;
@@ -24,20 +22,17 @@ public class PrincipalComListas {
 
         Filme f1 = filmeDoPaulo;
 
-
-        ArrayList<Titulo> lista = new ArrayList<>();
+        List<Titulo> lista = new LinkedList<>();
         lista.add(filmeDoPaulo);
         lista.add(outroFilme);
         lista.add(meuFilme);
         lista.add(supernatural);
-
 
         System.out.println(lista.get(3).getNome());
 
         if (lista.get(3) instanceof Filme filme && filme.getClassificacao() > 2) {
             System.out.println("Classificação: " + filme.getClassificacao()); //Para usar o getClassificação de Filme.java in
         }
-
 
         ArrayList<String> buscaPorArtista = new ArrayList<>();
         buscaPorArtista.add("Adam Sandler");
