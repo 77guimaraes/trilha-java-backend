@@ -2,6 +2,7 @@ package poo.br.com.alura.screenmatch.principal;
 
 import com.google.gson.Gson;
 import poo.br.com.alura.screenmatch.modelos.Titulo;
+import poo.br.com.alura.screenmatch.modelos.TituloOmdb;
 
 import java.io.IOException;
 import java.net.URI;
@@ -47,11 +48,14 @@ public class PrincipalComBusca {
                 e vai convertê-la pra mim em tipo String */
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
+
+                //DETALHES DO CODIGO ESTÃO NO NOTION
                 String json = response.body();
                 System.out.println(json);
 
                 Gson gson = new Gson();
-                Titulo meuTitulo = gson.fromJson(response.body(), Titulo.class);
-                System.out.println(meuTitulo);
+                //Titulo meuTitulo = gson.fromJson(response.body(), Titulo.class);
+                TituloOmdb meuTituloOmdb = gson.fromJson(response.body(), TituloOmdb.class);
+                System.out.println(meuTituloOmdb);
     }
 }
