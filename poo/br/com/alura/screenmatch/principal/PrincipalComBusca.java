@@ -26,7 +26,7 @@ public class PrincipalComBusca {
         var busca  = leitura.nextLine();
 
         String endereco = "https://www.omdbapi.com/?t=" + busca + "&apikey=d97120b9";
-
+try {
         /*CLASSE/CLIENTE HTTP
         Navegador/objeto responsável por fazer o transporte os dados*/
         HttpClient client = HttpClient.newHttpClient();
@@ -64,13 +64,22 @@ public class PrincipalComBusca {
                 //Titulo meuTitulo = gson.fromJson(response.body(), Titulo.class);
                 TituloOmdb meuTituloOmdb = gson.fromJson(response.body(), TituloOmdb.class);
                 System.out.println(meuTituloOmdb);
-                try {
+
+                /*
+                try e catch é utilizado para exibir saídas
+                 */
+
+                //try { //É como dizer "Executa isso, mas...
                     Titulo meuTitulo = new Titulo(meuTituloOmdb);
                     System.out.println("Titulo já convertido");
                     System.out.println(meuTitulo);
-                } catch (NumberFormatException e) {
+                } catch (NumberFormatException e) { //... se der esse erro, executa isso"
                     System.out.println("Aconteceu um erro: ");
                     System.out.println(e.getMessage());
+                } catch (IllegalArgumentException e){
+                    System.out.println("Algum erro de argumento na busca: ");
+                } catch (Exception e) { //Erro que eu não conheço
+                    System.out.println("Aconteceu algo que eu não conheço");
                 }
 
                 System.out.println("==== Programa finalizado! ====");
