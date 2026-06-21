@@ -7,10 +7,11 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class PrincipalComBusca {
+                                            //avisa
     public static void main(String[] args) throws IOException, InterruptedException {
 
         /*CLASSE/CLIENTE HTTP
-        Navegador responsável por fazer o transporte os dados*/
+        Navegador/objeto responsável por fazer o transporte os dados*/
         HttpClient client = HttpClient.newHttpClient();
 
         /*REQUISIÇÃO
@@ -23,10 +24,15 @@ public class PrincipalComBusca {
                 //Se fosse necessário, poderia adicionar mais coisas empilhando uma em cima da outra
                 .uri(URI.create("https://www.omdbapi.com/?t=top+gun&apikey=d97120b9"))
                 .build(); //finaliza a montagem do pedido
+
+        //RESPOSTA
+        /*Cria variável response do tipo String (HttpResponse<String>)
+        response vai receber o resultado do trabalho do objeto 'client'*/
         HttpResponse<String> response = client
+
+                //.send(request,... -> vai levar minha requisição pelo client
+                /*HttpResponse.BodyHandlers.ofString -->: vai trazer uma resposta (em bytes)
+                e vai convertê-la pra mim em tipo String */
                 .send(request, HttpResponse.BodyHandlers.ofString());
-
-
     }
-
 }
