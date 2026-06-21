@@ -17,6 +17,8 @@ public class PrincipalComBusca {
         System.out.println("Digit um filme para busca: ");
         var busca  = leitura.nextLine();
 
+        String endereco = "https://www.omdbapi.com/?t=" + busca + "&apikey=d97120b9";
+
         /*CLASSE/CLIENTE HTTP
         Navegador/objeto responsável por fazer o transporte os dados*/
         HttpClient client = HttpClient.newHttpClient();
