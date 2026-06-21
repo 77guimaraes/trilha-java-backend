@@ -1,6 +1,8 @@
 package poo.br.com.alura.screenmatch.principal;
 
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import poo.br.com.alura.screenmatch.modelos.Titulo;
 import poo.br.com.alura.screenmatch.modelos.TituloOmdb;
 
@@ -53,7 +55,9 @@ public class PrincipalComBusca {
                 String json = response.body();
                 System.out.println(json);
 
-                Gson gson = new Gson();
+                Gson gson = new GsonBuilder()
+                        .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                        .create();
                 //Titulo meuTitulo = gson.fromJson(response.body(), Titulo.class);
                 TituloOmdb meuTituloOmdb = gson.fromJson(response.body(), TituloOmdb.class);
                 System.out.println(meuTituloOmdb);
