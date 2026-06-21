@@ -31,7 +31,7 @@ public class PrincipalComBusca {
 
                 //Configurações do pedido (para onde ele deve ir e quais informações pegar)
                 //Se fosse necessário, poderia adicionar mais coisas empilhando uma em cima da outra
-                .uri(URI.create("https://www.omdbapi.com/?t=top+gun&apikey=d97120b9"))
+                .uri(URI.create(endereco))
                 .build(); //finaliza a montagem do pedido
 
         //RESPOSTA
