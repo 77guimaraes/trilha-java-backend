@@ -15,6 +15,8 @@ import java.util.Scanner;
 
 public class PrincipalComBusca {
 
+    private static HttpClient client;
+
     public static void main(String[] args)
         //avisando que o codigo pode quebrar caso falte internet (IOException) ou parar de rodar do nada (InterruptedException)
             throws IOException, InterruptedException {
@@ -58,11 +60,19 @@ public class PrincipalComBusca {
                 Gson gson = new GsonBuilder()
                         .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
                         .create();
+
                 //Titulo meuTitulo = gson.fromJson(response.body(), Titulo.class);
                 TituloOmdb meuTituloOmdb = gson.fromJson(response.body(), TituloOmdb.class);
                 System.out.println(meuTituloOmdb);
+                try {
+                    Titulo meuTitulo = new Titulo(meuTituloOmdb);
+                    System.out.println("Titulo já convertido");
+                    System.out.println(meuTitulo);
+                } catch (NumberFormatException e) {
+                    System.out.println("Aconteceu um erro: ");
+                    System.out.println(e.getMessage());
+                }
 
-                Titulo meuTitulo = new Titulo(meuTituloOmdb);
-                System.out.println("\n meuTitulo: " + meuTitulo);
+                System.out.println("==== Programa finalizado! ====");
     }
 }
