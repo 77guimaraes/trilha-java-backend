@@ -5,12 +5,17 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.Scanner;
 
 public class PrincipalComBusca {
 
     public static void main(String[] args)
         //avisando que o codigo pode quebrar caso falte internet (IOException) ou parar de rodar do nada (InterruptedException)
             throws IOException, InterruptedException {
+
+        Scanner leitura = new Scanner(System.in);
+        System.out.println("Digit um filme para busca: ");
+        var busca  = leitura.nextLine();
 
         /*CLASSE/CLIENTE HTTP
         Navegador/objeto responsável por fazer o transporte os dados*/
@@ -36,5 +41,6 @@ public class PrincipalComBusca {
                 /*HttpResponse.BodyHandlers.ofString -->: vai trazer uma resposta (em bytes)
                 e vai convertê-la pra mim em tipo String */
                 .send(request, HttpResponse.BodyHandlers.ofString());
+                System.out.println(response.body());
     }
 }
