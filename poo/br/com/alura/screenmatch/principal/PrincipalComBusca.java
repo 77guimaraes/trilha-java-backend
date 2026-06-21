@@ -25,7 +25,7 @@ public class PrincipalComBusca {
         System.out.println("Digit um filme para busca: ");
         var busca  = leitura.nextLine();
 
-        String endereco = "https://www.omdbapi.com/?t=" + busca + "&apikey=d97120b9";
+        String endereco = "https://www.omdbapi.com/?t=" + busca.replace(" ", "+") + "&apikey=d97120b9";
 try {
         /*CLASSE/CLIENTE HTTP
         Navegador/objeto responsável por fazer o transporte os dados*/
@@ -79,7 +79,7 @@ try {
                 } catch (IllegalArgumentException e){
                     System.out.println("Algum erro de argumento na busca: ");
                 } catch (Exception e) { //Erro que eu não conheço
-                    System.out.println("Aconteceu algo que eu não conheço");
+                    System.out.println(e.getMessage());
                 }
 
                 System.out.println("==== Programa finalizado! ====");
