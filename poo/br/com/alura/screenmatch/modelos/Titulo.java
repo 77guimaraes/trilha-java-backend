@@ -7,7 +7,7 @@ public class Titulo implements  Comparable<Titulo>{
     @SerializedName("Title") //Está dizendo: Quando encontrar "Title" traga a informação dele para "nome"
     private String nome = "Top Gun";
 
-    @SerializedName("Year") //Está dizendo: Quando encontrar "Year" traga a informaação dele para "anoDeLancamento"
+    @SerializedName("Year") //Está dizendo: Quando encontrar "Year" traga a informaação dele para "anoLancamento"
     private int anoLancamento = 2022;
     private boolean incluidoNoPlano = true;
     private double somaDasAvaliacoes;
@@ -18,6 +18,12 @@ public class Titulo implements  Comparable<Titulo>{
     public Titulo(String nome, int anoLancamento) {
         this.nome = nome;
         this.anoLancamento = anoLancamento;
+    }
+
+    public Titulo(TituloOmdb meuTituloOmdb) {
+        this.nome = meuTituloOmdb.title();
+        this.anoLancamento = Integer.valueOf(meuTituloOmdb.year());
+        this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0, 2));
     }
 
     public int getDuracaoEmMinutos() {
@@ -82,7 +88,6 @@ public class Titulo implements  Comparable<Titulo>{
     @Override
     public String toString() {
         return "nome='" + nome + '\'' +
-                ", anoLancamento=" + anoLancamento +
-                '}';
+                ", anoLancamento=" + anoLancamento + ", duração" + duracaoEmMinutos;
     }
 }
