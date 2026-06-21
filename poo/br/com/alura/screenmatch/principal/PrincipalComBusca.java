@@ -7,8 +7,10 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class PrincipalComBusca {
-                                            //avisa
-    public static void main(String[] args) throws IOException, InterruptedException {
+
+    public static void main(String[] args)
+        //avisando que o codigo pode quebrar caso falte internet (IOException) ou parar de rodar do nada (InterruptedException)
+            throws IOException, InterruptedException {
 
         /*CLASSE/CLIENTE HTTP
         Navegador/objeto responsável por fazer o transporte os dados*/
