@@ -44,7 +44,6 @@ public class PrincipalComBusca {
                 HttpRequest request = HttpRequest.newBuilder() //REQUISIÇÃO
                         .uri(URI.create(endereco))
                         .build(); //finaliza a montagem do pedido
-
                 HttpResponse<String> response = client//RESPOSTA
                         .send(request, HttpResponse.BodyHandlers.ofString());
 
@@ -65,9 +64,6 @@ public class PrincipalComBusca {
                 System.out.println("Titulo já convertido");
                 System.out.println(meuTitulo);
 
-                FileWriter escrita = new FileWriter("filmes.txt");
-                escrita.write(meuTitulo.toString());
-                escrita.close();
 
             } catch (NumberFormatException e) { //... se der esse erro, executa isso"
                 System.out.println("Aconteceu um erro: ");
