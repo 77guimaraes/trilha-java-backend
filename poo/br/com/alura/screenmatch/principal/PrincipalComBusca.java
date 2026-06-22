@@ -26,9 +26,13 @@ public class PrincipalComBusca {
         String busca = "";
         List<Titulo> titulos = new ArrayList<>();
 
+        Gson gson = new GsonBuilder()
+                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .create();
+
         while (!busca.equalsIgnoreCase("sair")) {
 
-            System.out.println("Digit um filme para busca: ");
+            System.out.println("Digite um filme para busca: ");
             busca = leitura.nextLine();
 
             if(busca.equalsIgnoreCase("sair")){
@@ -52,10 +56,6 @@ public class PrincipalComBusca {
                 String json = response.body();
                 System.out.println(json);
 
-                Gson gson = new GsonBuilder()
-                        .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
-                        .create();
-
                 //Titulo meuTitulo = gson.fromJson(response.body(), Titulo.class);
                 TituloOmdb meuTituloOmdb = gson.fromJson(response.body(), TituloOmdb.class);
                 System.out.println(meuTituloOmdb);
@@ -64,7 +64,7 @@ public class PrincipalComBusca {
                 System.out.println("Titulo já convertido");
                 System.out.println(meuTitulo);
 
-
+                titulos.add(meuTitulo);
             } catch (NumberFormatException e) { //... se der esse erro, executa isso"
                 System.out.println("Aconteceu um erro: ");
                 System.out.println(e.getMessage());
@@ -74,6 +74,10 @@ public class PrincipalComBusca {
                 System.out.println(e.getMessage());
             }
 
+            System.out.println(titulos);
+
+            FileWriter escrita = new FileWriter("filmes.json");
+            escrita.write(gson.toJson(titulos));
             System.out.println("==== Programa finalizado! ====");
         }
     }
