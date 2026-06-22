@@ -6,51 +6,47 @@ import com.google.gson.GsonBuilder;
 import poo.br.com.alura.screenmatch.modelos.Titulo;
 import poo.br.com.alura.screenmatch.modelos.TituloOmdb;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class PrincipalComBusca {
 
     private static HttpClient client;
 
-    public static void main(String[] args)
-        //avisando que o codigo pode quebrar caso falte internet (IOException) ou parar de rodar do nada (InterruptedException)
-            throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         Scanner leitura = new Scanner(System.in);
-        System.out.println("Digit um filme para busca: ");
-        var busca  = leitura.nextLine();
+        String busca = "";
+        List<Titulo> titulos = new ArrayList<>();
 
-        String endereco = "https://www.omdbapi.com/?t=" + busca.replace(" ", "+") + "&apikey=d97120b9";
-try {
-        /*CLASSE/CLIENTE HTTP
-        Navegador/objeto responsável por fazer o transporte os dados*/
-        HttpClient client = HttpClient.newHttpClient();
+        while (!busca.equalsIgnoreCase("sair")) {
 
-        /*REQUISIÇÃO
-        HttpRequest = Envelope do pedido. Contém as regras da requisição
-        request = nome da requisição
-        HttpRequest.newBuilder() =  Abre o pedido para acrescentar informações nele */
-        HttpRequest request = HttpRequest.newBuilder()
+            System.out.println("Digit um filme para busca: ");
+            busca = leitura.nextLine();
 
-                //Configurações do pedido (para onde ele deve ir e quais informações pegar)
-                //Se fosse necessário, poderia adicionar mais coisas empilhando uma em cima da outra
-                .uri(URI.create(endereco))
-                .build(); //finaliza a montagem do pedido
+            if(busca.equalsIgnoreCase("sair")){
+                break;
+            }
 
-        //RESPOSTA
-        /*Cria variável response do tipo String (HttpResponse<String>)
-        response vai receber o resultado do trabalho do objeto 'client'*/
-        HttpResponse<String> response = client
+            String endereco = "https://www.omdbapi.com/?t=" + busca.replace(" ", "+") + "&apikey=d97120b9";
+            System.out.println(endereco);
 
-                //.send(request,... -> vai levar minha requisição pelo client
-                /*HttpResponse.BodyHandlers.ofString -->: vai trazer uma resposta (em bytes)
-                e vai convertê-la pra mim em tipo String */
-                .send(request, HttpResponse.BodyHandlers.ofString());
+            try { //try { //É como dizer "Executa isso, mas...
+
+                HttpClient client = HttpClient.newHttpClient();//CLASSE/CLIENTE HTTP
+                HttpRequest request = HttpRequest.newBuilder() //REQUISIÇÃO
+                        .uri(URI.create(endereco))
+                        .build(); //finaliza a montagem do pedido
+
+                HttpResponse<String> response = client//RESPOSTA
+                        .send(request, HttpResponse.BodyHandlers.ofString());
 
 
                 //DETALHES DO CODIGO ESTÃO NO NOTION
@@ -65,23 +61,24 @@ try {
                 TituloOmdb meuTituloOmdb = gson.fromJson(response.body(), TituloOmdb.class);
                 System.out.println(meuTituloOmdb);
 
-                /*
-                try e catch é utilizado para exibir saídas
-                 */
+                Titulo meuTitulo = new Titulo(meuTituloOmdb);
+                System.out.println("Titulo já convertido");
+                System.out.println(meuTitulo);
 
-                //try { //É como dizer "Executa isso, mas...
-                    Titulo meuTitulo = new Titulo(meuTituloOmdb);
-                    System.out.println("Titulo já convertido");
-                    System.out.println(meuTitulo);
-                } catch (NumberFormatException e) { //... se der esse erro, executa isso"
-                    System.out.println("Aconteceu um erro: ");
-                    System.out.println(e.getMessage());
-                } catch (IllegalArgumentException e){
-                    System.out.println("Algum erro de argumento na busca: ");
-                } catch (Exception e) { //Erro que eu não conheço
-                    System.out.println(e.getMessage());
-                }
+                FileWriter escrita = new FileWriter("filmes.txt");
+                escrita.write(meuTitulo.toString());
+                escrita.close();
 
-                System.out.println("==== Programa finalizado! ====");
+            } catch (NumberFormatException e) { //... se der esse erro, executa isso"
+                System.out.println("Aconteceu um erro: ");
+                System.out.println(e.getMessage());
+            } catch (IllegalArgumentException e) {
+                System.out.println("Algum erro de argumento na busca: ");
+            } catch (Exception e) { //Erro que eu não conheço
+                System.out.println(e.getMessage());
+            }
+
+            System.out.println("==== Programa finalizado! ====");
+        }
     }
 }
