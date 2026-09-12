@@ -1,4 +1,0 @@
-.idea/
-# Ignorar arquivos compilados do Java
-out/
-*.class
